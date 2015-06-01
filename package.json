@@ -13,5 +13,6 @@
     "traversal"
   ],
   "author": "Gaetano Checinski",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/nikhedonia/objPath.git"
 }
