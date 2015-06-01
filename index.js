@@ -60,6 +60,7 @@ function objPath(path){
       get:makeGetter(exprStr),
       set:makeSetter(exprStr),
       chain:chain,
+      isRoot:!path.length,
       parent:parent,
       save:{
         get:makeSaveGetter(exprStr),
