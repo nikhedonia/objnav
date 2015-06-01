@@ -1,6 +1,6 @@
 {
-  "name": "objNav",
-  "version": "0.1.0",
+  "name": "objnav",
+  "version": "0.1.1",
   "description": "create fast getters and setters for deep obj traversal",
   "main": "index.js",
   "scripts": {

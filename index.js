@@ -62,11 +62,9 @@ function objNav(path){
       chain:chain,
       isRoot:!path.length,
       parent:parent,
-      save:{
-        get:makeSaveGetter(exprStr),
-        set:makeSaveSetter(exprStr),
-        unset:makeSaveUnsetter(exprStr)
-      }
+      sGet:makeSaveGetter(exprStr),
+      sSet:makeSaveSetter(exprStr),
+      sUnset:makeSaveUnsetter(exprStr)
     };
 
     obj.getSet=function(a,b){

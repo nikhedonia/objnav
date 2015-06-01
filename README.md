@@ -25,9 +25,9 @@ T(obj,6); returns 6; T.get(obj) is now 6
 // more functions:
 T.unset(obj) // unsets obj['a'][1]['b']
 
-T.save.get(obj,42) // returns  T.get(obj) when no error occurs otherwise 42; 
-T.save.set(obj,42) // returns value which has been set otherwise the exception object
-T.save.unset(obj)  // returns 1 if unset was successfull otherwise 0
+T.sGet(obj,42) // returns  T.get(obj) when no error occurs otherwise 42; 
+T.sSet(obj,42) // returns value which has been set otherwise the exception object
+T.sUnset(obj)  // returns 1 if unset was successfull otherwise 0
 
 //traversal
 
