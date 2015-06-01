@@ -1,0 +1,17 @@
+{
+  "name": "objPath",
+  "version": "0.1.0",
+  "description": "create fast getters and setters for deep obj traversal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "getter",
+    "setter",
+    "object",
+    "traversal"
+  ],
+  "author": "Gaetano Checinski",
+  "license": "MIT"
+}
