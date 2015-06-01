@@ -11,7 +11,7 @@ function objPathFromArray(A){
   if(!A.length) return ''; 
   var pp = '$';
   return '['+A.map(function(a){
-    if( !a.indexOf(pp) )
+    if( !a.toString().indexOf(pp) )
       return 'this'+"['"+a.substr(1)+"']";
     return "'"+a+"'";
   }).join('][')+']';    
@@ -45,17 +45,22 @@ function makeSaveUnsetter(str){
 
 var cache={};
 function objPath(path){
+  path=path||[];
   var p = path.join('/');
   if(cache[p]){
     return cache[p];
   }else{
     var exprStr = objPathFromArray(path);
-
+    var chain = function(next){ return objPath(path.concat(next)); };
+    var parent = function(){ return objPath(path.slice(0,-1)); };
     var obj={
-      path:p,
+      id:p,
+      path:path,
       exprStr:exprStr,
       get:makeGetter(exprStr),
       set:makeSetter(exprStr),
+      chain:chain,
+      parent:parent,
       save:{
         get:makeSaveGetter(exprStr),
         set:makeSaveSetter(exprStr),
