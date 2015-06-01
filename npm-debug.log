@@ -1,0 +1,107 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'publish', '.' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.29
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /home/gaetano/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/home/gaetano/.npm/objPath/0.1.0/package.tgz', '.' ]
+11 verbose tarball /home/gaetano/.npm/objPath/0.1.0/package.tgz
+12 verbose folder .
+13 info prepublish objPath@0.1.0
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /home/gaetano/.npm/1f1177db-tar.lock
+16 silly lockFile cb9abc82-no-npm-objPath-0-1-0-package-tgz tar:///home/gaetano/.npm/objPath/0.1.0/package.tgz
+17 verbose lock tar:///home/gaetano/.npm/objPath/0.1.0/package.tgz /home/gaetano/.npm/cb9abc82-no-npm-objPath-0-1-0-package-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile cb9abc82-no-npm-objPath-0-1-0-package-tgz tar:///home/gaetano/.npm/objPath/0.1.0/package.tgz
+21 silly lockFile cb9abc82-no-npm-objPath-0-1-0-package-tgz tar:///home/gaetano/.npm/objPath/0.1.0/package.tgz
+22 silly lockFile 09175f1c-aetano-npm-objPath-0-1-0-package /home/gaetano/.npm/objPath/0.1.0/package
+23 verbose lock /home/gaetano/.npm/objPath/0.1.0/package /home/gaetano/.npm/09175f1c-aetano-npm-objPath-0-1-0-package.lock
+24 silly lockFile 09175f1c-aetano-npm-objPath-0-1-0-package /home/gaetano/.npm/objPath/0.1.0/package
+25 silly lockFile 09175f1c-aetano-npm-objPath-0-1-0-package /home/gaetano/.npm/objPath/0.1.0/package
+26 silly lockFile 3a52ce78- .
+27 silly lockFile 3a52ce78- .
+28 silly publish { name: 'objPath',
+28 silly publish   version: '0.1.0',
+28 silly publish   description: 'create fast getters and setters for deep obj traversal',
+28 silly publish   main: 'index.js',
+28 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+28 silly publish   keywords: [ 'getter', 'setter', 'object', 'traversal' ],
+28 silly publish   author: { name: 'Gaetano Checinski' },
+28 silly publish   license: 'MIT',
+28 silly publish   repository:
+28 silly publish    { type: 'git',
+28 silly publish      url: 'https://github.com/nikhedonia/objPath.git' },
+28 silly publish   readme: '# objPath\ncreate fast getters and setters for deep obj traversal\n\n\n# examples\n\n```js\n\nvar objPath = require(\'objPath\');\n\nvar obj={\n  a:[0,{b:42}]\n};\n\nvar OP = objPath([\'a\',1,\'b\']); //OP\n\nT.get(obj); // returns 42 \nT.set(obj,5); // returns 5; T.get(obj) == 5\n\n//lazy getter/setter\n\nT(obj); // returns 5;\nT(obj,6); returns 6; T.get(obj) is now 6\n\n// more functions:\nT.unset(obj) // unsets obj[\'a\'][1][\'b\']\n\nT.save.get(obj,42) // returns  T.get(obj) when no error occurs otherwise 42; \nT.save.set(obj,42) // returns value which has been set otherwise the exception object\nT.save.unset(obj)  // returns 1 if unset was successfull otherwise 0\n\n//traversal\n\nT.chain([1]).get(obj); // accesses obj[\'a\'][1][\'b\'][1]  \nT.parent().get(obj); // accesses obj[\'a\'][1];\n\n\n// templates :\n\nvar T2 = objPath([\'a\',\'$x\',\'$y\']); // threads $<str> as placeholder\n\nT2.bind({x:1,y:\'b\'})(obj); // works the same way with get/set/ etc...\n\n```\n',
+28 silly publish   readmeFilename: 'README.md',
+28 silly publish   gitHead: 'd1b786110fa577854fcf6634a87250a77540a46b',
+28 silly publish   bugs: { url: 'https://github.com/nikhedonia/objPath/issues' },
+28 silly publish   _id: 'objPath@0.1.0',
+28 silly publish   _shasum: '9d3c4ae2b1f9ba75a2d4bfb63fb24c3bc8320024',
+28 silly publish   _from: '.' }
+29 verbose request where is /objPath
+30 verbose request registry https://registry.npmjs.org/
+31 verbose request id 5c8ee245d877ec97
+32 verbose url raw /objPath
+33 verbose url resolving [ 'https://registry.npmjs.org/', './objPath' ]
+34 verbose url resolved https://registry.npmjs.org/objPath
+35 verbose request where is https://registry.npmjs.org/objPath
+36 info trying registry request attempt 1 at 23:06:18
+37 http PUT https://registry.npmjs.org/objPath
+38 http 500 https://registry.npmjs.org/objPath
+39 info retry will retry, error on last attempt: Error: unexpected status code: 400 : objPath
+40 info trying registry request attempt 2 at 23:06:29
+41 http PUT https://registry.npmjs.org/objPath
+42 http 500 https://registry.npmjs.org/objPath
+43 info retry will retry, error on last attempt: Error: unexpected status code: 400 : objPath
+44 info trying registry request attempt 3 at 23:07:30
+45 http PUT https://registry.npmjs.org/objPath
+46 http 500 https://registry.npmjs.org/objPath
+47 verbose headers { 'content-type': 'application/json',
+47 verbose headers   'cache-control': 'max-age=0',
+47 verbose headers   'content-length': '39',
+47 verbose headers   'accept-ranges': 'bytes',
+47 verbose headers   date: 'Mon, 01 Jun 2015 21:06:40 GMT',
+47 verbose headers   via: '1.1 varnish',
+47 verbose headers   connection: 'keep-alive',
+47 verbose headers   'x-served-by': 'cache-fra1236-FRA',
+47 verbose headers   'x-cache': 'MISS',
+47 verbose headers   'x-cache-hits': '0',
+47 verbose headers   'x-timer': 'S1433192799.373772,VS0,VE1452' }
+48 error publish Failed PUT 500
+49 error Error: unexpected status code: 400 : objPath
+49 error     at RegClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:300:14)
+49 error     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:238:65)
+49 error     at Request.self.callback (/usr/lib/nodejs/request/index.js:148:22)
+49 error     at Request.emit (events.js:98:17)
+49 error     at Request.<anonymous> (/usr/lib/nodejs/request/index.js:896:14)
+49 error     at Request.emit (events.js:117:20)
+49 error     at IncomingMessage.<anonymous> (/usr/lib/nodejs/request/index.js:847:12)
+49 error     at IncomingMessage.emit (events.js:117:20)
+49 error     at _stream_readable.js:929:16
+49 error     at process._tickCallback (node.js:419:13)
+50 error If you need help, you may report this *entire* log,
+50 error including the npm and node versions, at:
+50 error     <http://github.com/npm/npm/issues>
+51 error System Linux 3.16.0-29-generic
+52 error command "/usr/bin/nodejs" "/usr/bin/npm" "publish" "."
+53 error cwd /home/gaetano/Projects/objPath
+54 error node -v v0.10.29
+55 error npm -v 1.4.21
+56 verbose exit [ 1, true ]

@@ -7,7 +7,7 @@ var extend = function(a,b){
   return a;
 }
 
-function objPathFromArray(A){
+function objNavFromArray(A){
   if(!A.length) return ''; 
   var pp = '$';
   return '['+A.map(function(a){
@@ -44,15 +44,15 @@ function makeSaveUnsetter(str){
 
 
 var cache={};
-function objPath(path){
+function objNav(path){
   path=path||[];
   var p = path.join('/');
   if(cache[p]){
     return cache[p];
   }else{
-    var exprStr = objPathFromArray(path);
-    var chain = function(next){ return objPath(path.concat(next)); };
-    var parent = function(){ return objPath(path.slice(0,-1)); };
+    var exprStr = objNavFromArray(path);
+    var chain = function(next){ return objNav(path.concat(next)); };
+    var parent = function(){ return objNav(path.slice(0,-1)); };
     var obj={
       id:p,
       path:path,
@@ -83,10 +83,10 @@ function objPath(path){
 
 }
 
-objPath.cache=cache;
-objPath.clearCache=function(){ cache={}; };
-objPath.fromStr= function(str,delim){
-  return objPath(str.split(delim||'/'));
+objNav.cache=cache;
+objNav.clearCache=function(){ cache={}; };
+objNav.fromStr= function(str,delim){
+  return objNav(str.split(delim||'/'));
 };
 
-module.exports =objPath;
+module.exports =objNav;
